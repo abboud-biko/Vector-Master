@@ -64,6 +64,19 @@ public class VectorHelper {
         this.max=max;
     }
 
+    public int[] changeVector(){
+        int[] result = new int[size];
+        for (int i=0; i<vector.length; i++){
+            result[i] = modifie(vector[i]);
+        }
+       return result;
+    }
+
+    public int modifie(int val){
+        val = val*2 - 1;
+        return val;
+    }
+
     public int getMax(){
         return this.max;
     }
