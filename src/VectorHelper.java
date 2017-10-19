@@ -25,5 +25,16 @@ public class VectorHelper {
         }
         return vector;
     }
+
+    public int[] addVector( int[] vector2 ) throws diffrentLenghtException{
+        int[] result = new int[size];
+        if ( vector.length != vector2.length ) throw new diffrentLenghtException();
+        else {
+            for (int i=0; i<vector.length; i++){
+                result[i] = vector2[i] + vector[i];
+            }
+        }
+        return result;
+    }
     
 }
