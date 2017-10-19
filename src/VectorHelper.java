@@ -7,6 +7,7 @@ public class VectorHelper {
         this.size = vector.length;
         this.vector = vector;
     }
+   
     public int[] sortVector(){
         int i = 0;
         while ( i < vector.length ){
