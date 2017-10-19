@@ -37,5 +37,17 @@ public class VectorHelper {
         }
         return result;
     }
+
+    public int[] invertVector(){
+        int j = vector.length - 1;
+        int s;
+        for (int i=0; i<vector.length/2; i++){
+            s = vector[i];
+            vector[i] = vector[j];
+            vector[j] = s;
+            j--;
+        }
+        return vector;
+    }
     
 }
