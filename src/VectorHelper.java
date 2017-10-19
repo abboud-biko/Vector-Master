@@ -2,6 +2,8 @@ public class VectorHelper {
 
     private int[] vector;
     private int size;
+    private int max;
+    private int min;
 
     public VectorHelper(int[] vector) {
         this.size = vector.length;
@@ -49,5 +51,27 @@ public class VectorHelper {
         }
         return vector;
     }
+
+    public void getMinAndMax(){
+        int min = vector[0];
+        int max = min;
+        for (int i=0; i<vector.length; i++){
+            if (vector[i] > max) max = vector[i];
+            if (vector[i] < min) min = vector[i];
+        }
+        System.out.println("Max : "+max+" | Min : "+min);
+        this.min=min;
+        this.max=max;
+    }
+
+    public int getMax(){
+        return this.max;
+    }
+    
+    public int getMin(){
+        return this.min;
+    }
+
+
     
 }
