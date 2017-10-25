@@ -138,6 +138,15 @@ public class VectorHelper {
         return this.min;
     }
 
+    public void setVector(int[] vector){
+        this.size = vector.length;
+        this.vector = vector;
+        
+    }
+   
+    public int[] getVector(){
+        return this.vector;
+    }
 
     
 }
