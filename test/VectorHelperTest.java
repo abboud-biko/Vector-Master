@@ -54,6 +54,7 @@ public class VectorHelperTest {
     /**
      * Test of addVector method, of class VectorHelper.
      */
+
     @Test (expected = differentLengthException.class)
     public void testAddVector() throws Exception {
         System.out.println("addVector");
