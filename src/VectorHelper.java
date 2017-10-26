@@ -138,12 +138,20 @@ public class VectorHelper {
         return this.min;
     }
 
+    /**
+     * set the vector you want to manipulate
+     * @param vector the manipulated vector
+     */
     public void setVector(int[] vector){
         this.size = vector.length;
         this.vector = vector;
         
     }
-   
+
+    /**
+     * get the vector you want to manipulate
+     * @return the vector you want to manipulate
+     */
     public int[] getVector(){
         return this.vector;
     }

@@ -56,6 +56,15 @@ public class VectorHelperTest {
      */
 
     @Test (expected = differentLengthException.class)
+    public void testDifferentLengthException() throws Exception {
+        System.out.println("add vectors with different length");
+        int[] vector = {5,9,1,30,0,15,8};
+        int[] vector2={5,9,1,30};
+        VectorHelper instance = new VectorHelper(vector);
+        instance.addVector(vector2);
+    }
+
+    @Test
     public void testAddVector() throws Exception {
         System.out.println("addVector");
         int[] vector = {5,9,1,30,0,15,8};

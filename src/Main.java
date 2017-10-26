@@ -10,11 +10,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int[] vector1;
         int[] vector2;
-        int index,n,rep=0;
-        
-        index=0;
-        
-        
+        int n,rep=0;
+
         System.out.println("****************************************************");
         System.out.println("    Application 2 : Manipulation des Vecteurs");
         System.out.println("****************************************************");
@@ -40,24 +37,23 @@ public class Main {
                     vector1=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector1[i]=sc.nextInt();
                     }
                     vectorHelper = new VectorHelper(vector1);
                     System.out.print("Vecteur : ");
                     
                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]);
+                        System.out.print((vectorHelper.getVector())[i]+" | ");
                         }
                     System.out.println();
                     System.out.print("Resultat du traitement : ");
                     vectorHelper.sortVector();
                     
                      for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]);
+                        System.out.print((vectorHelper.getVector())[i]+" | ");
                         }
-                    
-                    
+
                   ;
                   break;  
                 
@@ -69,21 +65,21 @@ public class Main {
                     vector1=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector1[i]=sc.nextInt();
                     }
                     vectorHelper = new VectorHelper(vector1);
                     System.out.print("Vecteur : ");
                     
                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                        System.out.print((vectorHelper.getVector())[i]+" | " );
                         }
                     System.out.println();
                     System.out.print("Resultat du traitement : ");
                     vectorHelper.invertVector();
                     
                      for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                        System.out.print((vectorHelper.getVector())[i]+" | "  );
                         }
                     
                   ;
@@ -96,21 +92,21 @@ public class Main {
                     vector1=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector1[i]=sc.nextInt();
                     }
                     vectorHelper = new VectorHelper(vector1);
                     System.out.print("Vecteur : ");
                     
                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                        System.out.print((vectorHelper.getVector())[i]+" | "  );
                         }
                     System.out.println();
                     System.out.print("Resultat du traitement : ");
-                    vectorHelper.changeVector();
+                    vector2 = vectorHelper.changeVector();
                     
-                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                     for (int i=0;i<vector2.length;i++){
+                        System.out.print(vector2[i]+" | "  );
                         }
                     
                   ;
@@ -123,14 +119,14 @@ public class Main {
                     vector1=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector1[i]=sc.nextInt();
                     }
                     vectorHelper = new VectorHelper(vector1);
                     System.out.print("Vecteur : ");
                     
                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                        System.out.print((vectorHelper.getVector())[i]+" | "  );
                         }
                     System.out.println();
                     vectorHelper.getMinAndMax();
@@ -146,7 +142,7 @@ public class Main {
                     vector1=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector1[i]=sc.nextInt();
                     }
                     
@@ -158,46 +154,39 @@ public class Main {
                     vector2=new int[n];
                     
                     for (int i=0;i<n;i++){
-                        System.out.print("Introduire l'element "+(i+1));
+                        System.out.print("Introduire l'element "+(i+1)+": ");
                         vector2[i]=sc.nextInt();
                     }
-                    
-                    try{
-                        vectorHelper.addVector(vector2);}
-                    catch(Exception e){}
                     
                     System.out.print("Vecteur 1  : ");
                     
                    for (int i=0;i<vector1.length;i++){
-                        System.out.print(vector1[i]  );
+                        System.out.print(vector1[i]+" | "  );
                         }
                     System.out.println();
                     
                     System.out.print("Vecteur 2  : ");
                     
                     for (int i=0;i<vector2.length;i++){
-                        System.out.print(vector2[i]  );
+                        System.out.print(vector2[i]+" | "   );
                         }
                     System.out.println();
                     System.out.print("Resultat du traitement : ");
-                    
-                     for (int i=0;i<vectorHelper.getVector().length;i++){
-                        System.out.print((vectorHelper.getVector())[i]  );
+                    try{
+                        vector1 = vectorHelper.addVector(vector2);
+                        for (int i=0;i<vector1.length;i++){
+                            System.out.print(vector1[i]+" | "  );
                         }
-                    
-                    
+                    }
+                    catch(differentLengthException e){
+                        System.out.println(e.getMessage());
+                    }
+
                   ;
                   break;
-                default:
-                  /*Action*/;             
+                default:;
         }
 
-        
-        
-        
-        
-        
-        
     }
 
 }
